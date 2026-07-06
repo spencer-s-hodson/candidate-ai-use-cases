@@ -39,13 +39,13 @@ export function UseCasesTabs() {
 
   return (
     <Tabs defaultValue="all" className="w-full">
-      <div className="flex flex-wrap items-center gap-3">
-        <span className="text-[11px] font-bold tracking-[0.14em] text-muted-foreground uppercase">
+      <div className="flex w-full flex-wrap items-start gap-3">
+        <span className="pt-1.5 text-[11px] font-bold tracking-[0.14em] text-muted-foreground uppercase">
           Filter
         </span>
         <TabsList
           variant="line"
-          className="h-auto flex-wrap justify-start gap-2 bg-transparent p-0"
+          className="!h-auto min-h-8 w-full min-w-0 flex-1 flex-wrap justify-start gap-2 bg-transparent p-0"
         >
           {filters.map((filter) => (
             <TabsTrigger
@@ -61,7 +61,7 @@ export function UseCasesTabs() {
       </div>
 
       {filters.map((filter) => (
-        <TabsContent key={filter.id} value={filter.id} className="mt-6 w-full">
+        <TabsContent key={filter.id} value={filter.id} className="mt-6 w-full flex-none">
           <div className="grid w-full gap-5 sm:grid-cols-2 lg:grid-cols-3">
             {USE_CASES.filter(
               (uc) => filter.id === "all" || uc.category === filter.id
