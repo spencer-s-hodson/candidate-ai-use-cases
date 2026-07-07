@@ -39,13 +39,13 @@ export function UseCasesTabs() {
 
   return (
     <Tabs defaultValue="all" className="w-full">
-      <div className="flex w-full flex-wrap items-start gap-3">
-        <span className="pt-1.5 text-[11px] font-bold tracking-[0.14em] text-muted-foreground uppercase">
+      <div className="flex w-full flex-col gap-3 sm:flex-row sm:items-start">
+        <span className="text-[11px] font-bold tracking-[0.14em] text-muted-foreground uppercase sm:shrink-0 sm:pt-1.5">
           Filter
         </span>
         <TabsList
           variant="line"
-          className="!h-auto min-h-8 w-full min-w-0 flex-1 flex-wrap justify-start gap-2 bg-transparent p-0"
+          className="!h-auto min-h-8 w-full flex-wrap justify-start gap-2 bg-transparent p-0 sm:min-w-0 sm:flex-1"
         >
           {filters.map((filter) => (
             <TabsTrigger
